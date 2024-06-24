@@ -1,0 +1,219 @@
+<section class="section is-fullheight">
+  <div class="container">
+    <div class="columns is-desktop">
+      <div class="column is-4"></div>
+      <div class="column is-one-third-desktop is-full-mobile">
+        <div class="box">
+          <h3 class="title has-text-black has-text-centered">Register</h3>
+          <hr />
+          <p class="subtitle has-text-black has-text-centered">
+            Create an account for free.
+          </p>
+          <notification></notification>
+          <form [formGroup]="registerForm">
+            <div class="field">
+              <label class="label">Username:</label>
+              <div class="control has-icons-left has-icons-right">
+                <input
+                  class="input"
+                  type="text"
+                  placeholder="joeystark"
+                  value=""
+                  formControlName="username"
+                />
+                <span class="icon is-small is-left">
+                  <fa-icon [icon]="faUser"></fa-icon>
+                </span>
+                <span class="icon is-small is-right">
+                  @if (
+                    registerForm.controls.username.valid &&
+                    registerForm.controls.username.touched
+                  ) {
+                    <fa-icon [icon]="faCheck"></fa-icon>
+                  }
+                </span>
+              </div>
+              @if (
+                !registerForm.controls.username.valid &&
+                registerForm.controls.username.touched
+              ) {
+                <p class="help is-danger">Username is invalid</p>
+              }
+            </div>
+
+            <div class="field">
+              <label class="label">Email:</label>
+              <div class="control has-icons-left has-icons-right">
+                <input
+                  class="input"
+                  type="email"
+                  placeholder="joeystark@matchstick.com"
+                  value=""
+                  formControlName="email"
+                />
+                <span class="icon is-small is-left">
+                  <fa-icon [icon]="faEnvelope"></fa-icon>
+                </span>
+                <span class="icon is-small is-right">
+                  @if (
+                    registerForm.controls.email.valid &&
+                    registerForm.controls.email.touched
+                  ) {
+                    <fa-icon [icon]="faCheck"></fa-icon>
+                  }
+                </span>
+              </div>
+              @if (
+                !registerForm.controls.email.valid &&
+                registerForm.controls.email.touched
+              ) {
+                <p class="help is-danger">This email is invalid</p>
+              }
+            </div>
+
+            <div class="field">
+              <label class="label">Password:</label>
+              <div class="control has-icons-left has-icons-right">
+                <input
+                  class="input"
+                  type="password"
+                  placeholder=""
+                  value=""
+                  formControlName="password"
+                  (keyup)="
+                    formUtils.testPasswordValue(
+                      registerForm.controls.password.value!
+                    )
+                  "
+                />
+                <span class="icon is-small is-left">
+                  <fa-icon [icon]="faLock"></fa-icon>
+                </span>
+                <p
+                  class="help"
+                  [ngClass]="
+                    formUtils.passwordValidationSignal().hasMinimumCharacters
+                      ? 'is-success'
+                      : 'is-danger'
+                  "
+                >
+                  Has at least 8 characters
+                  @if (
+                    formUtils.passwordValidationSignal().hasMinimumCharacters
+                  ) {
+                    <fa-icon [icon]="faCheck"></fa-icon>
+                  } @else {
+                    <span><fa-icon [icon]="faTimes"></fa-icon></span>
+                  }
+                </p>
+                <p
+                  class="help"
+                  [ngClass]="
+                    formUtils.passwordValidationSignal().hasLowerCase
+                      ? 'is-success'
+                      : 'is-danger'
+                  "
+                >
+                  Has at least one lowercase character
+                  @if (formUtils.passwordValidationSignal().hasLowerCase) {
+                    <fa-icon [icon]="faCheck"></fa-icon>
+                  } @else {
+                    <span><fa-icon [icon]="faTimes"></fa-icon></span>
+                  }
+                </p>
+                <p
+                  class="help"
+                  [ngClass]="
+                    formUtils.passwordValidationSignal().hasUpperCase
+                      ? 'is-success'
+                      : 'is-danger'
+                  "
+                >
+                  Has at least one uppercase character
+                  @if (formUtils.passwordValidationSignal().hasUpperCase) {
+                    <fa-icon [icon]="faCheck"></fa-icon>
+                  } @else {
+                    <span><fa-icon [icon]="faTimes"></fa-icon></span>
+                  }
+                </p>
+                <p
+                  class="help"
+                  [ngClass]="
+                    formUtils.passwordValidationSignal().hasSpecialCharacter
+                      ? 'is-success'
+                      : 'is-danger'
+                  "
+                >
+                  Has at least one special character
+                  @if (
+                    formUtils.passwordValidationSignal().hasSpecialCharacter
+                  ) {
+                    <fa-icon [icon]="faCheck"></fa-icon>
+                  } @else {
+                    <span><fa-icon [icon]="faTimes"></fa-icon></span>
+                  }
+                </p>
+                <p
+                  class="help"
+                  [ngClass]="
+                    formUtils.passwordValidationSignal().hasNumeric
+                      ? 'is-success'
+                      : 'is-danger'
+                  "
+                >
+                  Has at lease one number
+                  @if (formUtils.passwordValidationSignal().hasNumeric) {
+                    <fa-icon [icon]="faCheck"></fa-icon>
+                  } @else {
+                    <span><fa-icon [icon]="faTimes"></fa-icon></span>
+                  }
+                </p>
+                <span class="icon is-small is-right">
+                  @if (
+                    registerForm.controls.password.valid &&
+                    registerForm.controls.password.touched
+                  ) {
+                    <fa-icon [icon]="faCheck"></fa-icon>
+                  }
+                </span>
+              </div>
+              @if (
+                !registerForm.controls.password.valid &&
+                registerForm.controls.password.touched
+              ) {
+                <p class="help is-danger">This password is invalid</p>
+              }
+            </div>
+
+            <div class="field">
+              <div class="control">
+                <label class="checkbox">
+                  <input type="checkbox" formControlName="agreeToTos" />
+                  I agree to the
+                  <a [routerLink]="['/tos']">Terms and Conditions</a>
+                </label>
+              </div>
+            </div>
+
+            <div class="field">
+              <div class="control">
+                <button
+                  class="button is-info is-fullwidth"
+                  (click)="signUp()"
+                  [disabled]="!registerForm.valid"
+                >
+                  <fa-icon [icon]="faSignInAlt"></fa-icon> Sign Up
+                </button>
+              </div>
+            </div>
+            <p>
+              Already have an account?
+              <a [routerLink]="['/login']">Click here</a>.
+            </p>
+            <p><a [routerLink]="['/forgotpassword']">Forgot Password? </a></p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

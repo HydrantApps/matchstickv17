@@ -1,0 +1,6 @@
+@if (notifications.notification().message) {
+  <div class="notification {{ notifications.notification().type }}">
+    <button class="delete" (click)="dismiss()"></button>
+    {{ notifications.notification().message }}
+  </div>
+}
