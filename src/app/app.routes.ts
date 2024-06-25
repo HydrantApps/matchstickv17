@@ -14,7 +14,7 @@ const redirectUnauthorizeToLogin = () => redirectUnauthorizedTo('');
  * Redirects users to dashboard of they are logged in
  * @returns
  */
-const redirectLoggedInToHome = () => redirectLoggedInTo(['dashboard']);
+const redirectLoggedInToHome = () => redirectLoggedInTo(['/dashboard']);
 
 export const routes: Routes = [
   {
@@ -41,6 +41,13 @@ export const routes: Routes = [
     loadComponent: () =>
       import('./auth/forgot/forgot.component').then((m) => m.ForgotComponent),
     ...canActivate(redirectLoggedInToHome),
+  },
+  {
+    path: 'profile',
+    loadComponent: () =>
+      import('./auth/profile/profile.component').then(
+        (m) => m.ProfileComponent,
+      ),
   },
   {
     path: 'dashboard',

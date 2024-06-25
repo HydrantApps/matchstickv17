@@ -1,6 +1,10 @@
-<nav class="navbar" role="navigation" aria-label="main navigation">
+<nav
+  class="navbar is-fixed-top is-transparent"
+  role="navigation"
+  aria-label="main navigation"
+>
   <div class="navbar-brand">
-    <a class="navbar-item" href="https://bulma.io">
+    <a class="navbar-item" href="https://matchstick.appspot.com">
       <svg
         width="640"
         height="160"
@@ -42,44 +46,59 @@
 
   <div id="main" class="navbar-menu" [ngClass]="isMenuOpen ? 'is-active' : ''">
     <div class="navbar-start">
-      <a class="navbar-item" [routerLink]="['/']">
+      <a
+        class="navbar-item"
+        [routerLink]="['/']"
+        [routerLinkActive]="['is-info']"
+        (click)="toggleMenuOpen()"
+      >
         <fa-icon [icon]="faHome"></fa-icon> Home
       </a>
 
-      <a class="navbar-item" [routerLink]="['/docs']">
+      <a
+        class="navbar-item"
+        [routerLink]="['/docs']"
+        [routerLinkActive]="['is-info']"
+        (click)="toggleMenuOpen()"
+      >
         <fa-icon [icon]="faBook"></fa-icon> Documentation
       </a>
 
-      <a class="navbar-item" [routerLink]="['/docs']"> Documentation </a>
+      <!-- <a class="navbar-item" [routerLink]="['/docs']"> Documentation </a> -->
     </div>
     @if (authService.user) {
       <div class="navbar-end">
-        <div class="navbar-item">
-          <div class="buttons">
-            <a class="button is-primary" [routerLink]="['/profile']">
-              <fa-icon [icon]="faIdCard"></fa-icon
-              ><strong>&nbsp;{{ authService.userSignal().displayName }}</strong>
-            </a>
-            <a class="button is-light" (click)="logout()">
-              <fa-icon [icon]="faSignOutAlt"></fa-icon>&nbsp; Log Out
-            </a>
-          </div>
-        </div>
+        <a
+          [routerLink]="['/profile']"
+          class="navbar-item"
+          [routerLinkActive]="['is-info']"
+          (click)="toggleMenuOpen()"
+        >
+          <fa-icon [icon]="faIdCard"></fa-icon
+          >{{ authService.userSignal().displayName }}
+        </a>
+        <a (click)="logout()" class="navbar-item">
+          <fa-icon [icon]="faSignOutAlt"></fa-icon> Log Out
+        </a>
       </div>
     } @else {
       <div class="navbar-end">
-        <div class="navbar-item">
-          <div class="buttons">
-            <a class="button is-primary" [routerLink]="['/register']">
-              <fa-icon [icon]="faUserPlus"></fa-icon> &nbsp;<strong
-                >Sign up free!</strong
-              >
-            </a>
-            <a class="button is-light" [routerLink]="['/login']">
-              <fa-icon [icon]="faSignInAlt"></fa-icon> &nbsp;Log in
-            </a>
-          </div>
-        </div>
+        <a
+          [routerLink]="['/register']"
+          class="navbar-item"
+          [routerLinkActive]="['is-info']"
+          (click)="toggleMenuOpen()"
+        >
+          <fa-icon [icon]="faUserPlus"></fa-icon> Sign up free!
+        </a>
+        <a
+          [routerLink]="['/login']"
+          class="navbar-item"
+          [routerLinkActive]="['is-info']"
+          (click)="toggleMenuOpen()"
+        >
+          <fa-icon [icon]="faSignInAlt"></fa-icon> Log in
+        </a>
       </div>
     }
   </div>

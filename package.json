@@ -1,6 +1,6 @@
 {
-  "name": "matchstick",
-  "version": "17.0.0",
+  "name": "@hydapps/create-matchstick-app",
+  "version": "17.1.2",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -9,10 +9,17 @@
     "test": "ng test",
     "prepare": "husky"
   },
+  "bin": {
+    "create-matchstick-app": "./cli.js"
+  },
   "lint-staged": {
     "**/*": "prettier --write --ignore-unknown"
   },
-  "private": true,
+  "author": "Joseph Nwachukwu",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/HydrantApps/matchstickv17"
+  },
   "dependencies": {
     "@angular/animations": "^17.3.0",
     "@angular/common": "^17.3.0",
@@ -34,6 +41,7 @@
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "typewriter-effect": "^2.21.0",
+    "user": "^0.0.0",
     "zone.js": "~0.14.3"
   },
   "devDependencies": {
