@@ -1,6 +1,6 @@
 {
   "name": "@hydapps/create-matchstick-app",
-  "version": "17.1.3",
+  "version": "17.1.4",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -10,7 +10,7 @@
     "prepare": "husky"
   },
   "bin": {
-    "create-matchstick-app": "./cli.js"
+    "@hydapps/create-matchstick-app": "./cli.js"
   },
   "lint-staged": {
     "**/*": "prettier --write --ignore-unknown"
