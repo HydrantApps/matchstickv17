@@ -3,6 +3,7 @@
 //const {execSync} = require('child_process');
 import { execSync } from "child_process";
 const runCommand = (command) => {
+  //console.log('running command', command)
   try {
     execSync(`${command}`, { stdio: "inherit" });
   } catch (e) {
@@ -11,7 +12,7 @@ const runCommand = (command) => {
   }
   return true;
 };
-console.lof("test");
+console.log("test");
 const repoName = process.argv[2];
 const gitCheckoutCmd = `git clone --depth 1 https://github.com/HydrantApps/matchstickv17.git ${repoName}`;
 const installDeps = `cd ${repoName} && npm i`;
