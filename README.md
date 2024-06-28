@@ -1,4 +1,6 @@
 # Matchstick
+## Matchstick is an Angular PWA with a firebase backend that you can use to fire up your app as quick as possible
+
 
 
 ## Primary Packages
@@ -103,7 +105,8 @@ This application strcuture here as a suggestion and can be changed to fit your n
 ├── node_modules                    # Installed Modules and Packages
 ├── src                             # Application source code
 │   ├── app                         # Components that dictate major page structure
-│   │   ├── auth                    # Dashboard Page
+│   │   ├── auth                    # Auth Components
+│   │   │   ├── admin               # Admin panel to manage users
 │   │   │   ├── dashboard           # Dashboard Page
 │   │   │   ├── forgot              # Forgot Password Page
 │   │   │   ├── login               # Login Page
@@ -194,6 +197,21 @@ This shows a diagram of all the bundles in your package and their relative size 
 |June 23,2024|17.2.1|[Release Notes]()|
 
 ## Product Road Map
+|Date              |Version    |Realease Notes|
+|------------------|-----------|--------------|
+|July 2024|17.3.0|New Ionic/Angular version|
+|August 2024|17.4.0|New React Version|
+|September 2024|17.5.0|Chat Module and Messaging Module|
+
+
+## Projects that use versions of Matchstick
+* [Invoicer](https:invoicer.me)
+* [Epoch Time Tracking](epochtime.com)
+* [Invoicer Ionic App](github.com/josephnwachukwu/invoicerapp)
+* [CoParent Plus]()
+* [Card Club]()
+
+If you use Matchstick for a project send a pull request to add your project to the list.
 
 ## Licenses
 
