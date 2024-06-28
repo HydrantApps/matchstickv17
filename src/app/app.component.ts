@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { HeaderComponent } from '../header/header.component';
 import { FooterComponent } from '../footer/footer.component';
+import { AuthService } from './auth/auth.service';
 
 @Component({
   selector: 'app-root',
@@ -12,4 +13,5 @@ import { FooterComponent } from '../footer/footer.component';
 })
 export class AppComponent {
   title = 'matchstick';
+  authService = inject(AuthService);
 }

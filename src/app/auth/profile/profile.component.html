@@ -1,1 +1,227 @@
-<p>profile works!</p>
+@if (profileSignal() !== null) {
+  <section class="section is-fullheight is-top-to-bottom">
+    <div class="container">
+      <div class="columns">
+        <div class="column">
+          <notification></notification>
+          @if (!this.authService.user?.emailVerified) {
+            <div class="notification is-warning">
+              <button class="delete"></button>
+              You havent verified your email yet. Please
+              <strong (click)="sendEmailVerification()">click here</strong> to
+              send an email verification.
+            </div>
+          }
+        </div>
+      </div>
+      <div class="columns">
+        <div class="column is-6">
+          <div class="card">
+            <div class="card-content">
+              <div class="media">
+                <div class="media-left">
+                  <figure class="image is-48x48">
+                    <img
+                      src="{{ profileSignal()!.photoURL }}"
+                      alt="Placeholder image"
+                    />
+                  </figure>
+                </div>
+                <div class="media-content">
+                  <p class="title is-4">{{ profileSignal()!.displayName }}</p>
+                  <p class="subtitle is-6">{{ profileSignal()!.email }}</p>
+                </div>
+              </div>
+
+              <div class="content">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Phasellus nec iaculis mauris. <a></a>. <a href="#">#css</a>
+                <a href="#">#responsive</a>
+                <br />
+                <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="column is-6">
+          <label for="fileUpload">Edit Picture</label>
+          <input id="fileUpload" type="file" #upload accept=".jpg,.jpeg,.png" />
+          <button class="button is-info" (click)="uploadFile(upload)">
+            Upload Picture
+          </button>
+        </div>
+      </div>
+      <div class="columns">
+        <div class="column is-6">
+          <div class="field">
+            <label class="label">Email:</label>
+            <div class="control">
+              <input
+                class="input"
+                type="text"
+                [disabled]="true"
+                value="{{ profileSignal()!.email }}"
+                placeholder="Text input"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="column is-6">
+          <form [formGroup]="updatePasswordForm">
+            <label class="label">Password:</label>
+            <div class="field has-addons has-icons-left">
+              <!-- <label class="label">Password:</label> -->
+              <div class="control">
+                <input
+                  class="input"
+                  type="password"
+                  value=""
+                  placeholder="update password"
+                  formControlName="password"
+                  (keyup)="
+                    formUtils.testPasswordValue(
+                      updatePasswordForm.controls.password.value!
+                    )
+                  "
+                />
+              </div>
+              <div class="control">
+                <button
+                  class="button is-info"
+                  (click)="updatePassword()"
+                  [disabled]="!updatePasswordForm.valid"
+                >
+                  Update Password
+                </button>
+              </div>
+            </div>
+            <p
+              class="help"
+              [ngClass]="
+                formUtils.passwordValidationSignal().hasMinimumCharacters
+                  ? 'is-success'
+                  : 'is-danger'
+              "
+            >
+              Has at least 8 characters
+              @if (formUtils.passwordValidationSignal().hasMinimumCharacters) {
+                <fa-icon [icon]="faCheck"></fa-icon>
+              } @else {
+                <span><fa-icon [icon]="faTimes"></fa-icon></span>
+              }
+            </p>
+            <p
+              class="help"
+              [ngClass]="
+                formUtils.passwordValidationSignal().hasLowerCase
+                  ? 'is-success'
+                  : 'is-danger'
+              "
+            >
+              Has at least one lowercase character
+              @if (formUtils.passwordValidationSignal().hasLowerCase) {
+                <fa-icon [icon]="faCheck"></fa-icon>
+              } @else {
+                <span><fa-icon [icon]="faTimes"></fa-icon></span>
+              }
+            </p>
+            <p
+              class="help"
+              [ngClass]="
+                formUtils.passwordValidationSignal().hasUpperCase
+                  ? 'is-success'
+                  : 'is-danger'
+              "
+            >
+              Has at least one uppercase character
+              @if (formUtils.passwordValidationSignal().hasUpperCase) {
+                <fa-icon [icon]="faCheck"></fa-icon>
+              } @else {
+                <span><fa-icon [icon]="faTimes"></fa-icon></span>
+              }
+            </p>
+            <p
+              class="help"
+              [ngClass]="
+                formUtils.passwordValidationSignal().hasSpecialCharacter
+                  ? 'is-success'
+                  : 'is-danger'
+              "
+            >
+              Has at least one special character
+              @if (formUtils.passwordValidationSignal().hasSpecialCharacter) {
+                <fa-icon [icon]="faCheck"></fa-icon>
+              } @else {
+                <span><fa-icon [icon]="faTimes"></fa-icon></span>
+              }
+            </p>
+            <p
+              class="help"
+              [ngClass]="
+                formUtils.passwordValidationSignal().hasNumeric
+                  ? 'is-success'
+                  : 'is-danger'
+              "
+            >
+              Has at lease one number
+              @if (formUtils.passwordValidationSignal().hasNumeric) {
+                <fa-icon [icon]="faCheck"></fa-icon>
+              } @else {
+                <span><fa-icon [icon]="faTimes"></fa-icon></span>
+              }
+            </p>
+            @if (
+              !updatePasswordForm.controls.password.valid &&
+              updatePasswordForm.controls.password.touched
+            ) {
+              <p class="help is-danger">This password is invalid</p>
+            }
+          </form>
+        </div>
+      </div>
+      <div class="columns">
+        <div class="column is-6">
+          <div class="field">
+            <label class="label">Name:</label>
+            <div class="control">
+              <input
+                class="input"
+                type="text"
+                value="{{ profileSignal()!.displayName }}"
+                placeholder="Text input"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="column is-6">
+          <div class="field">
+            <label class="label">Phone Number:</label>
+            <div class="control">
+              <input
+                class="input"
+                type="text"
+                value="{{ profileSignal()!.phoneNumber }}"
+                placeholder="Text input"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="columns">
+        <div class="column">
+          <button class="button is-primary" (click)="updateProfile()">
+            Update Profile
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+} @else {
+  <section class="section is-fullheight">
+    <div class="container">
+      <div class="columns">
+        <div class="column is-6"></div>
+      </div>
+    </div>
+  </section>
+}

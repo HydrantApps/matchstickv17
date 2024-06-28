@@ -1,3 +1,11 @@
 <app-header></app-header>
-<router-outlet />
+<!-- 
+  This fixes race condition if you try to reload on an authenticated route
+  It will resolve the proper route when the user becomes available -->
+@if (authService.user) {
+  <router-outlet />
+} @else {
+  <router-outlet />
+}
+
 <app-footer></app-footer>

@@ -10,9 +10,13 @@ export type RegisterCredientials = LoginCredientals & {
 };
 
 export type UserProfile = {
-  username: string;
-  email: string;
-  tier: string;
+  id?: string;
+  username?: string;
+  displayName?: string;
+  email?: string;
+  tier?: string;
+  phoneNumber?: string;
+  photoURL: string;
 };
 
 export type Address = {

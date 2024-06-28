@@ -6,3 +6,36 @@
 fa-icon {
   margin-right: 5px;
 }
+
+.footer-bg {
+  background: rgb(23, 111, 205);
+  background: linear-gradient(
+    313deg,
+    rgba(23, 111, 205, 1) 0%,
+    rgba(80, 55, 221, 1) 33%,
+    rgba(209, 65, 232, 1) 64%,
+    rgba(250, 129, 40, 1) 100%
+  );
+  color: #fff;
+  a {
+    color: #fff;
+  }
+  h4 {
+    color: #fff;
+  }
+}
+
+.header-bg {
+  background: rgb(23, 111, 205);
+  background: linear-gradient(
+    313deg,
+    rgba(23, 111, 205, 1) 0%,
+    rgba(80, 55, 221, 1) 33%,
+    rgba(209, 65, 232, 1) 64%,
+    rgba(250, 129, 40, 1) 100%
+  );
+  color: #fff;
+  a {
+    color: #fff;
+  }
+}

@@ -164,37 +164,42 @@ function runShellCmd(command) {
     });
   });
 }
+var greeting =
+  '__    __     ______     ______   ______     __  __     ______     ______   __     ______     __  __       \n/ "-./     /  __    /__  _ /  ___   / _    /  ___   /__  _ /    /  ___   / / /       \n  -./      __   /_/ /   ____     __    ___    /_/ /       ____     _"-.     \n  _  _   _ _     _   _____   _ _  /_____     _   _   _____   _ _    \n  /_/  /_/   /_//_/     /_/   /_____/   /_//_/   /_____/     /_/   /_/   /_____/   /_//_/    \n                                                                                                           \n';
 function setup() {
   return __awaiter(this, void 0, void 0, function () {
     var error_1;
     return __generator(this, function (_a) {
       switch (_a.label) {
         case 0:
-          _a.trys.push([0, 4, , 5]);
+          console.log(greeting);
+          _a.label = 1;
+        case 1:
+          _a.trys.push([1, 5, , 6]);
           return [
             4 /*yield*/,
             runShellCmd(
               "git clone --depth 1 ".concat(repo, " ").concat(repoName),
             ),
           ];
-        case 1:
+        case 2:
           _a.sent();
           //process.chdir(folderPath);
           console.log("installing dependencies, please wait...");
           return [4 /*yield*/, runShellCmd("npm i")];
-        case 2:
+        case 3:
           _a.sent();
           console.log("dependencies installed successfully!");
           return [4 /*yield*/, runShellCmd("npx rimraf ./.git")];
-        case 3:
+        case 4:
           _a.sent();
           console.log("old .git folder deleted successfully!");
-          return [3 /*break*/, 5];
-        case 4:
+          return [3 /*break*/, 6];
+        case 5:
           error_1 = _a.sent();
           console.log(error_1);
-          return [3 /*break*/, 5];
-        case 5:
+          return [3 /*break*/, 6];
+        case 6:
           return [2 /*return*/];
       }
     });

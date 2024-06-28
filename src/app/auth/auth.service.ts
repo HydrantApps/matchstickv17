@@ -61,12 +61,14 @@ export class AuthService {
     uid: '',
   });
   isPremiumMember!: boolean;
+  currentUser = this.auth.currentUser;
 
   constructor() {
     this.auth.onAuthStateChanged((user) => {
       if (user !== null) {
         this.user = user;
         console.log('email verified', user.emailVerified);
+        console.log(`user.uid`, user.uid);
         this.userSignal.set({
           displayName: user.displayName,
           photoURL: user.photoURL,
@@ -142,6 +144,7 @@ export class AuthService {
     );
   };
 
+  // Creates a new user then adds a document to the 'users' firestore collection
   createUser = (newUser: any) => {
     const userPayload = {
       uid: newUser.uid,
@@ -156,11 +159,17 @@ export class AuthService {
     });
   };
 
-  // getUser = ():Observable<UserProfile[]> => {
-  //   const q = query(this.usersCollection, where('uid', '==', this.currentUser.uid))
-  //   return collectionData(q, {idField: 'id'})
-  // }
-  sendEmailVerification = (user: User) => {
-    sendEmailVerification(user).then((data) => console.log(data));
+  // Sends an email verifiation email through firebase
+  sendEmailVerification = () => {
+    sendEmailVerification(this.user!).then((data) => console.log(data));
   };
+
+  // Updates the users password
+  updateUserPassword = (newPassword: string) => {
+    const promise = updatePassword(this.auth.currentUser!, newPassword);
+    return from(promise);
+  };
+
+  // Updates profile in firestore
+  updateProfile = () => {};
 }

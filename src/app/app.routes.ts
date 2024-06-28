@@ -4,7 +4,7 @@ import {
   redirectUnauthorizedTo,
   redirectLoggedInTo,
 } from '@angular/fire/auth-guard';
-
+import { AuthService } from './auth/auth.service';
 /**
  * Redirects Unauthorozed users to logn
  * @returns
