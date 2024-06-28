@@ -153,3 +153,8 @@ Husky is a precommit git hook that prevents checking in with code errors
 
 ### Webpack bundle analyzer 
 This shows a diagram of all the bundles in your package and their relative size to the project 
+
+## Product Road Map
+
+## Licenses
+
