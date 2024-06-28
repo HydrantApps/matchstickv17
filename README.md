@@ -1,7 +1,8 @@
 # Matchstick
 ## Matchstick is an Angular PWA with a firebase backend that you can use to fire up your app as quick as possible
 
-
+This version serves as an updated version of the following repos
+* []()
 
 ## Primary Packages
 * [AngularFire](https://github.com/angular/angularfire)
@@ -194,7 +195,7 @@ This shows a diagram of all the bundles in your package and their relative size 
 ## Release Notes
 |Date              |Version    |Realease Notes|
 |------------------|-----------|--------------|
-|June 23,2024|17.2.1|[Release Notes]()|
+|June 23,2024|17.2.1|Initial Release|
 
 ## Product Road Map
 |Date              |Version    |Realease Notes|
