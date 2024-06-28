@@ -1,5 +1,6 @@
 # Matchstick
 
+
 ## Primary Packages
 * [AngularFire](https://github.com/angular/angularfire)
 * [Firebase 9](https://firebase.google.com/)
@@ -186,6 +187,11 @@ Husky is a precommit git hook that prevents checking in with code errors
 
 ### Webpack bundle analyzer 
 This shows a diagram of all the bundles in your package and their relative size to the project 
+
+## Release Notes
+|Date              |Version    |Realease Notes|
+|------------------|-----------|--------------|
+|June 23,2024|17.2.1|[Release Notes]()|
 
 ## Product Road Map
 
