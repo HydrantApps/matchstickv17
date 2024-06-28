@@ -25,7 +25,7 @@ Or from the command line using
 Once node is installed you can use to get the latest version of the angular cli.<br />
 
 run ```npm i -g @angular/cli```
-
+    $ npm i -g @angular/cli
 ### Firebase Functions
 You will need the firebase cli installed globally on your system to push firebase function changes and init the project. <br />
 
