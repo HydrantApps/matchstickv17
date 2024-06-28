@@ -21,11 +21,12 @@ You can install node from nodejs.org
 Or from the command line using 
 
 ### Angular CLI 
-Once node is installed you can use to get the latest version of the angular cli 
-```npm install @angular/cli```
+Once node is installed you can use to get the latest version of the angular cli.
+run ```npm i -g @angular/cli```
 
 ### Firebase Functions
-You will need the firebase cli installed globally on your system to push firebase function changes and init the project 
+You will need the firebase cli installed globally on your system to push firebase function changes and init the project.
+run ```npm i -g firebase-tools```
 
 ### Git 
 You will need git installed on your machine and in your environment path to push your changes to your newly created repo 
@@ -34,7 +35,7 @@ Alternatively you can use the GitHub desktop client
 
 ## Installation 
 This package can be installed from npm package manager just run the following command 
-Run npx create-matchstick-app repoName 
+run ```npx create-matchstick-app repoName ```
 
 Go to console.firebase.google.com
 
@@ -45,7 +46,7 @@ This will provide you with a firebase config object.
 
 Copy this object and add this to your environment.ts file. (Make sure your environment.ts file is in the .git ignore file so that it isn’t checked in) 
 
-Next install firebase functions globally on your system so that you can use the firebase cli
+Next install firebase tools globally on your system so that you can use the firebase cli
 
 Next run the firebase init to connect your repo to the newly created project. 
 This will create a firebase.json fire in the root of your project that contains some configurations for your firebase set up. 
