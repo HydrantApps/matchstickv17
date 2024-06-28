@@ -113,7 +113,7 @@ This application strcuture here as a suggestion and can be changed to fit your n
 │   │   ├── home                    # Home Page
 │   │   ├── shared                  # Shared Re-usable Components
 │   │   ├── NotFound                # Not Found Page
-│   │   └── Shared                  # Shared Re-usable Components
+│   │   └── Shared                  # Shared Re-usable Components Services and Directives
 │   └── static                      # Main route definitions and async split points
 │       ├── images                  # Images for the app
 │       │   └── favicon.ico         # Favicon for the app
@@ -127,12 +127,12 @@ This application strcuture here as a suggestion and can be changed to fit your n
 ├── .editorconfig                   # Editor Configuration
 ├── .gitignore                      # Git Ignore File
 ├── angular.json                    # Angular Configuration
-├── package-lock.json               # Unit tests
-├── package.json                           # Unit tests
-├── README.md                           # Unit tests
-├── tsconfig.app.json                           # Unit tests
-├── tsconfig.json                           # Unit tests
-└── tsconfig.spec.json                           # Unit tests
+├── package-lock.json               # Package lock File
+├── package.json                    # NPM Package Directory
+├── README.md                       # **** This File
+├── tsconfig.app.json               # Extenstion of is config for the angular app and compiler rules
+├── tsconfig.json                   # Compiler rles
+└── tsconfig.spec.json              # Test for TS config file 
 ```
 
 ## Features
