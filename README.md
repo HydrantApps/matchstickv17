@@ -103,27 +103,40 @@ This application strcuture here as a suggestion and can be changed to fit your n
 ├── src                             # Application source code
 │   ├── app                         # Components that dictate major page structure
 │   │   ├── auth                    # Dashboard Page
-│       │   ├── dashboard           # Dashboard Page
-│       │   ├── forgot              # Forgot Password Page
-│       │   ├── login               # Login Page
-│       │   ├── profile             # User Profile Page
-│       │   ├── register            # Register User Page
-│       │   ├── auth.service.ts     # Auth Specific Services
-│       │   └── auth.types.ts       # Auth Specific Types and Interfaces
+│   │   │   ├── dashboard           # Dashboard Page
+│   │   │   ├── forgot              # Forgot Password Page
+│   │   │   ├── login               # Login Page
+│   │   │   ├── profile             # User Profile Page
+│   │   │   ├── register            # Register User Page
+│   │   │   ├── auth.service.ts     # Auth Specific Services
+│   │   │   └── auth.types.ts       # Auth Specific Types and Interfaces
 │   │   ├── home                    # Home Page
 │   │   ├── shared                  # Shared Re-usable Components
+│   │   ├── todo                    # Todo components
 │   │   ├── NotFound                # Not Found Page
-│   │   └── Shared                  # Shared Re-usable Components Services and Directives
-│   └── static                      # Main route definitions and async split points
-│       ├── images                  # Images for the app
-│       │   └── favicon.ico         # Favicon for the app
-│       └── theme                   # Assets for the app
-│           ├── fonts               # Fonts for the app
-│           ├── index.js            # Setup for the Theme
-│           └── variables.js        # CSS variables for colors and Sizes
+│   │   ├── Shared                  # Shared Re-usable Components Services and Directives
+│   │   │   ├── notifications       # Dashboard Page
+│   │   │   ├── form-utils.service  # form utility methods
+│   │   │   ├── utils.service.ts    # utility methods
+│   │   ├── app.component.html      # Entry Component Template Header, Footer, and Router Outlet
+│   │   ├── app.component.scss      # Entry Component Styles
+│   │   ├── app.component.ts        # Entry Component Class Definition
+│   │   ├── app.config.ts           # Application Config
+│   │   └── app.routes.ts           # Application Routes
+│   ├── assets                      # Main route definitions and async split points
+│   │   ├── audio                   # Audio Files
+│   │   ├── fonts                   # Font Files
+│   │   └── images                  # Image Files
+│   ├── bin                         # Excecutable Shell Commands
+│   ├── evironments                 # Environment Specific Variables
+│   ├── footer                      # Footer Component
+│   ├── header                      # Header Component
+│   ├── types                       # Custom Types for Js Modules
+│   ├── .prettierrc                 # Custom Types for Js Modules
+│   ├── favicon.ico                 # Custom Types for Js Modules
 │   ├── index.html                  # Main HTML page container for app
-│   ├── index.js                    # Application Entry Point and Route Definition
-│   ├── index.css                   # Application-wide styles (generally settings)
+│   ├── main.ts                     # Application Entry Point and Route Definition
+│   └── styles.scss                 # Application-wide styles (generally settings)
 ├── .editorconfig                   # Editor Configuration
 ├── .gitignore                      # Git Ignore File
 ├── angular.json                    # Angular Configuration
