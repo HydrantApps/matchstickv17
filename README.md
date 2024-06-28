@@ -97,20 +97,21 @@ This application strcuture here as a suggestion and can be changed to fit your n
 
 ```
 .
-├── config                          # Project and build configurations
-│   ├── webpack.build.prod.js       # Build for Production
-│   ├── webpack.js                  # Main Build for development
-│   ├── webpack.serve.dev.js        # Build for dev server
-│   ├── webpack.serve.prod.js       # Build for production
-│   └── mocha-multi-reporters.json  # 
+├── .angular                        # Angular Cache
+├── .husky                          # Husky Configuration
+├── node_modules                    # Installed Modules and Packages
 ├── src                             # Application source code
-│   ├── index.html                  # Main HTML page container for app
-│   ├── index.js                    # Application Entry Point and Route Definition
-│   ├── index.css                   # Application-wide styles (generally settings)
 │   ├── app                         # Components that dictate major page structure
-│   │   ├── Dashboard               # Dashboard Page
-│   │   ├── Home                    # Home Page
-│   │   ├── MainLayout              # Main Template for layout
+│   │   ├── auth                    # Dashboard Page
+│       │   ├── dashboard           # Dashboard Page
+│       │   ├── forgot              # Forgot Password Page
+│       │   ├── login               # Login Page
+│       │   ├── profile             # User Profile Page
+│       │   ├── register            # Register User Page
+│       │   ├── auth.service.ts     # Auth Specific Services
+│       │   └── auth.types.ts       # Auth Specific Types and Interfaces
+│   │   ├── home                    # Home Page
+│   │   ├── shared                  # Shared Re-usable Components
 │   │   ├── NotFound                # Not Found Page
 │   │   └── Shared                  # Shared Re-usable Components
 │   └── static                      # Main route definitions and async split points
@@ -120,7 +121,18 @@ This application strcuture here as a suggestion and can be changed to fit your n
 │           ├── fonts               # Fonts for the app
 │           ├── index.js            # Setup for the Theme
 │           └── variables.js        # CSS variables for colors and Sizes
-└── tests                           # Unit tests
+│   ├── index.html                  # Main HTML page container for app
+│   ├── index.js                    # Application Entry Point and Route Definition
+│   ├── index.css                   # Application-wide styles (generally settings)
+├── .editorconfig                   # Editor Configuration
+├── .gitignore                      # Git Ignore File
+├── angular.json                    # Angular Configuration
+├── package-lock.json               # Unit tests
+├── package.json                           # Unit tests
+├── README.md                           # Unit tests
+├── tsconfig.app.json                           # Unit tests
+├── tsconfig.json                           # Unit tests
+└── tsconfig.spec.json                           # Unit tests
 ```
 
 ## Features
