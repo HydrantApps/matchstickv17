@@ -1,24 +1,25 @@
 # Matchstick
 
-
-AngularFire
-Firebase 9
-Bulma 
-Bulma Extensions 
-Font Awesome 
-Webpack bundle Analyzer
-Husky
-Maskito 
-IntroJs 
-AOS
+## Primary Packages
+[AngularFire]()
+[Firebase 9]()
+[Bulma]()
+[Bulma Extensions]() 
+[Font Awesome]
+[Webpack bundle Analyzer]()
+[Husky]()
+[Maskito]()
+[IntroJs]()
+[AOS]()
 
 This project follows Angular Patterns and Anti-Patterns 
 
 ## Getting started 
-Prerequisites 
-Node v18 or later 
-You can install node from nodejs.org
+### Prerequisites and Requirements
+Node `18` or later 
+You can install node from [NodeJS](https:nodejs.org)
 Or from the command line using 
+`sudo apt get node`
 
 ### Angular CLI 
 Once node is installed you can use to get the latest version of the angular cli.
@@ -37,7 +38,7 @@ Alternatively you can use the GitHub desktop client
 This package can be installed from npm package manager just run the following command 
 run ```npx create-matchstick-app repoName ```
 
-Go to console.firebase.google.com
+Go to [The Firebase Console](https://console.firebase.google.com)
 
 Create a new Firebase project and add Firestore, authentication, storage and hosting. 
 
