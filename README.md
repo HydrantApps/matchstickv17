@@ -1,18 +1,18 @@
 # Matchstick
 
 ## Primary Packages
-* [AngularFire]()
-* [Firebase 9]()
-* [Bulma]()
-* [Bulma Extensions]() 
-* [Font Awesome]
-* [Webpack bundle Analyzer]()
-* [Husky]()
-* [Maskito]()
-* [IntroJs]()
-* [AOS]()
+* [AngularFire](https://github.com/angular/angularfire)
+* [Firebase 9](https://firebase.google.com/)
+* [Bulma](https://bulma.io/)
+* [Bulma Extensions](https://bulma.io/extensions/) 
+* [Font Awesome](https://fontawesome.com/)
+* [Webpack bundle Analyzer](https://github.com/webpack-contrib/webpack-bundle-analyzer)
+* [Husky](https://github.com/typicode/husky)
+* [Maskito](https://maskito.dev/frameworks/angular)
+* [IntroJs](https://introjs.com/docs/wrappers/angularjs)
+* [AOS](https://michalsnik.github.io/aos/)
 
-This project follows Angular Patterns and Anti-Patterns 
+This project follows [Angular Patterns and Anti-Patterns]()
 
 ## Getting started 
 ### Prerequisites and Requirements
@@ -22,20 +22,23 @@ Or from the command line using
 `sudo apt get node`
 
 ### Angular CLI 
-Once node is installed you can use to get the latest version of the angular cli.
+Once node is installed you can use to get the latest version of the angular cli.<br />
+
 run ```npm i -g @angular/cli```
 
 ### Firebase Functions
-You will need the firebase cli installed globally on your system to push firebase function changes and init the project.
+You will need the firebase cli installed globally on your system to push firebase function changes and init the project. <br />
+
 run ```npm i -g firebase-tools```
 
 ### Git 
 You will need git installed on your machine and in your environment path to push your changes to your newly created repo 
 
-Alternatively you can use the GitHub desktop client 
+Alternatively you can use the [GitHub Desktop Client]()
 
 ## Installation 
-This package can be installed from npm package manager just run the following command 
+This package can be installed from npm package manager just run the following command <br />
+
 run ```npx create-matchstick-app repoName ```
 
 Go to [The Firebase Console](https://console.firebase.google.com)
@@ -46,6 +49,19 @@ Next to go to add new project and select web
 This will provide you with a firebase config object. 
 
 Copy this object and add this to your environment.ts file. (Make sure your environment.ts file is in the .git ignore file so that it isn’t checked in) 
+the firebase config will look like this
+
+```
+const firebaseConfig = {
+  apiKey: "AIzaSyA0mh8xWZUbRkSjZnTS4mmWifl2WAYxZ3A",
+  authDomain: "yourAppName.firebaseapp.com",
+  databaseURL: "https://yourappDatabase.firebaseio.com",
+  projectId: "yourAppName",
+  storageBucket: "yourAppName.appspot.com",
+  messagingSenderId: "XXXXXXXXXX",
+  appId: "1:XXXXXXXXXX:web:XXXXXXXXXXXXXXXXX"
+};
+```
 
 Next install firebase tools globally on your system so that you can use the firebase cli
 
@@ -106,8 +122,9 @@ Matchstick contains a full login system with the following pages:
 * Forgot password 
 * Dashboard
 * Profile page
-* 
-All pages are complete with form validation and firebase authentication and firestore setup. 
+
+
+All pages are complete with form validation and firebase authentication and firestore setup.  
 Newly created users will also have an entry created in the users firestore collection with default data which can be updated from the profile page. 
 
 ### Header
