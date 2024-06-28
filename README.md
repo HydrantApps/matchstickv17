@@ -19,21 +19,21 @@ This project follows [Angular Patterns and Anti-Patterns]()
 Node `18` or later 
 You can install node from [NodeJS](https:nodejs.org)
 Or from the command line using 
-```
+```bash
 $ sudo apt get node
 ```
 
 ### Angular CLI 
 Once node is installed you can use to get the latest version of the angular cli.<br />
 
-```
+```bash
   $ npm i -g @angular/cli
 ```
 
 ### Firebase Functions
 You will need the firebase cli installed globally on your system to push firebase function changes and init the project. <br />
 
-```
+```bash
   $ npm i -g firebase-tools
 ```
 
@@ -45,7 +45,7 @@ Alternatively you can use the [GitHub Desktop Client]()
 ## Installation 
 This package can be installed from npm package manager just run the following command <br />
 
-```
+```bash
   $ npx create-matchstick-app repoName
 ```
 
@@ -59,7 +59,7 @@ This will provide you with a firebase config object.
 Copy this object and add this to your environment.ts file. (Make sure your environment.ts file is in the .git ignore file so that it isn’t checked in) 
 the firebase config will look like this
 
-```
+```bash
 const firebaseConfig = {
   apiKey: "AIzaSyA0mh8xWZUbRkSjZnTS4mmWifl2WAYxZ3A",
   authDomain: "yourAppName.firebaseapp.com",
