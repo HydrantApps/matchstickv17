@@ -20,8 +20,9 @@ Node v18 or later
 You can install node from nodejs.org
 Or from the command line using 
 
-### Angular cli 
-Once node is installed you can use npm install @angular/cli to get the latest version of the angular  cli 
+### Angular CLI 
+Once node is installed you can use to get the latest version of the angular cli 
+```npm install @angular/cli```
 
 ### Firebase Functions
 You will need the firebase cli installed globally on your system to push firebase function changes and init the project 
