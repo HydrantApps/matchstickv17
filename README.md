@@ -1,16 +1,16 @@
 # Matchstick
 
 ## Primary Packages
-[AngularFire]()
-[Firebase 9]()
-[Bulma]()
-[Bulma Extensions]() 
-[Font Awesome]
-[Webpack bundle Analyzer]()
-[Husky]()
-[Maskito]()
-[IntroJs]()
-[AOS]()
+* [AngularFire]()
+* [Firebase 9]()
+* [Bulma]()
+* [Bulma Extensions]() 
+* [Font Awesome]
+* [Webpack bundle Analyzer]()
+* [Husky]()
+* [Maskito]()
+* [IntroJs]()
+* [AOS]()
 
 This project follows Angular Patterns and Anti-Patterns 
 
@@ -100,12 +100,13 @@ This application strcuture here as a suggestion and can be changed to fit your n
 ```
 
 ## Features
-Matchstick contains a full login system with the following pages 
-Login 
-Register 
-Forgot password 
-Dashboard
-Profile page
+Matchstick contains a full login system with the following pages:
+* Login 
+* Register 
+* Forgot password 
+* Dashboard
+* Profile page
+* 
 All pages are complete with form validation and firebase authentication and firestore setup. 
 Newly created users will also have an entry created in the users firestore collection with default data which can be updated from the profile page. 
 
