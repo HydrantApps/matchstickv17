@@ -198,6 +198,7 @@
             <label class="label">Phone Number:</label>
             <div class="control">
               <input
+                [maskito]="phoneNumberMask"
                 class="input"
                 type="text"
                 value="{{ profileSignal()!.phoneNumber }}"

@@ -12,7 +12,6 @@ import {
   DocumentData,
   updateDoc,
 } from '@angular/fire/firestore';
-import { from, Observable } from 'rxjs';
 import { UserProfile } from '../auth.types';
 import {
   getDownloadURL,
@@ -42,6 +41,8 @@ import {
   NotificationTypeEnum,
 } from '../../shared/notification/notification.service';
 import { NotificationComponent } from '../../shared/notification/notification.component';
+import { MaskitoDirective } from '@maskito/angular';
+import { MaskitoOptions } from '@maskito/core';
 
 @Component({
   selector: 'app-profile',
@@ -54,6 +55,7 @@ import { NotificationComponent } from '../../shared/notification/notification.co
     ReactiveFormsModule,
     FontAwesomeModule,
     NotificationComponent,
+    MaskitoDirective,
   ],
 })
 export class ProfileComponent implements AfterViewInit {
@@ -80,6 +82,27 @@ export class ProfileComponent implements AfterViewInit {
       ]),
     ],
   });
+  readonly phoneNumberMask: MaskitoOptions = {
+    mask: [
+      '+',
+      '1',
+      ' ',
+      '(',
+      /\d/,
+      /\d/,
+      /\d/,
+      ')',
+      ' ',
+      /\d/,
+      /\d/,
+      /\d/,
+      '-',
+      /\d/,
+      /\d/,
+      /\d/,
+      /\d/,
+    ],
+  };
 
   constructor() {}
 
