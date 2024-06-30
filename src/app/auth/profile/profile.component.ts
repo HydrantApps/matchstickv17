@@ -121,11 +121,16 @@ export class ProfileComponent implements AfterViewInit {
     const users = collectionData(q, { idField: 'id' });
     users.subscribe((data: DocumentData[]) => {
       if (data.length === 1) {
+        console.log(`id`, data[0]['id']);
         const docRef = doc(this.firestore, `users`, data[0]['id']);
         (async () => {
           const docSnap = await getDoc(docRef);
           console.log('docsnap data', docSnap.data());
-          this.profileSignal.set(docSnap.data() as UserProfile);
+          this.profileSignal.set({
+            ...(docSnap.data() as UserProfile),
+            id: data[0]['id'],
+          });
+          //this.profileSignal.set({...this.profileSignal(), {id: data[0]['id']}})
         })();
       }
     });
@@ -146,7 +151,10 @@ export class ProfileComponent implements AfterViewInit {
   };
 
   updateProfile = () => {
-    this.authService.updateProfile();
+    this.update({ ...this.profileSignal() } as UserProfile);
+    this.authService.updateUserProfile({
+      ...this.profileSignal(),
+    } as UserProfile);
   };
 
   sendEmailVerification = () => {
@@ -154,6 +162,7 @@ export class ProfileComponent implements AfterViewInit {
   };
 
   update = (userdata: UserProfile) => {
+    console.log('userdata', userdata);
     const docRef = doc(this.firestore, 'users', this.profileSignal()!.id!);
     updateDoc(docRef, { ...userdata })
       .then((data) => {

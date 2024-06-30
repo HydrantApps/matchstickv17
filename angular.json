@@ -27,9 +27,12 @@
             "styles": [
               "src/styles.scss",
               "node_modules/bulma/css/bulma.css",
+              "node_modules/bulma-extensions/dist/css/bulma-extenstions.min.css",
               "node_modules/aos/dist/aos.css"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/bulma-extensions/dist/js/bulma-extenstions.min.js"
+            ]
           },
           "configurations": {
             "production": {
