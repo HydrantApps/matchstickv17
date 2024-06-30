@@ -2,6 +2,9 @@
 
 ## Matchstick is an Angular PWA with a firebase backend that you can use to fire up your app as quick as possible
 
+![Cirrus CI - Default Branch Build Status](https://img.shields.io/cirrus/github/HydrantApps/matchstickv17)
+
+
 This version serves as an updated version of a series of different boilerplate repos i have made in the past (in no particular order).
 * [Angular Start](https://github.com/josephnwachukwu/AngularStart)
 * [Angular MatchStick](https://github.com/josephnwachukwu/angular-matchstick)
