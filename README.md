@@ -1,8 +1,13 @@
-# Matchstick
+[logo](https://github.com/HydrantApps/matchstickv17/assets/3653774/41b19fda-28ab-4c9b-a500-ba7137240610)
+
 ## Matchstick is an Angular PWA with a firebase backend that you can use to fire up your app as quick as possible
 
-This version serves as an updated version of the following repos
-* []()
+This version serves as an updated version of a series of different boilerplate repos i have made in the past (in no particular order).
+* [Angular Start](https://github.com/josephnwachukwu/AngularStart)
+* [Angular MatchStick](https://github.com/josephnwachukwu/angular-matchstick)
+* [Restart React Starter](https://github.com/josephnwachukwu/Re-Start_React_Starter)
+* [Kickstartr](https://github.com/josephnwachukwu/kickstartr)
+* [PHP Restful Membership System ](https://github.com/josephnwachukwu/PHP-Restful-Membership-System)
 
 ## Primary Packages
 * [AngularFire](https://github.com/angular/angularfire)
