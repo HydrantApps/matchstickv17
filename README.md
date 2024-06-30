@@ -7,9 +7,9 @@
 A demo can be seen here
 [Demo Site]()
 
-Test Credentials
-username: demouser@matchstick.com
-password: DemoUser1234!
+Test Credentials <br />
+username: demouser@matchstick.com <br />
+password: DemoUser1234! <br />
 
 
 This version serves as an updated version of a series of different boilerplate repos i have made in the past (in no particular order).
