@@ -1,4 +1,4 @@
-[logo](https://github.com/HydrantApps/matchstickv17/assets/3653774/41b19fda-28ab-4c9b-a500-ba7137240610)
+<img src="https://github.com/HydrantApps/matchstickv17/assets/3653774/41b19fda-28ab-4c9b-a500-ba7137240610" alt="logo" />
 
 ## Matchstick is an Angular PWA with a firebase backend that you can use to fire up your app as quick as possible
 
