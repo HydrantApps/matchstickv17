@@ -4,7 +4,12 @@
 
 ![CircleCI (branch)](https://img.shields.io/circleci/build/github/HydrantApps/matchstickv17/main) ![GitHub commit activity](https://img.shields.io/github/commit-activity/w/HydrantApps/matchstickv17) ![GitHub repo size](https://img.shields.io/github/repo-size/HydrantApps/matchstickv17)
 
+A demo can be seen here
+[Demo Site]()
 
+Test Credentials
+username: demouser@matchstick.com
+password: DemoUser1234!
 
 
 This version serves as an updated version of a series of different boilerplate repos i have made in the past (in no particular order).
