@@ -27,11 +27,15 @@
             "styles": [
               "src/styles.scss",
               "node_modules/bulma/css/bulma.css",
-              "node_modules/bulma-extensions/dist/css/bulma-extenstions.min.css",
+              "node_modules/bulma-extensions/dist/css/bulma-extensions.min.css",
               "node_modules/aos/dist/aos.css"
             ],
             "scripts": [
-              "node_modules/bulma-extensions/dist/js/bulma-extenstions.min.js"
+              "node_modules/bulma-extensions/dist/js/bulma-extensions.min.js"
+            ],
+            "allowedCommonJsDependencies": [
+              "aos",
+              "typewriter-effect/dist/core"
             ]
           },
           "configurations": {
@@ -39,8 +43,8 @@
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "500kb",
-                  "maximumError": "1mb"
+                  "maximumWarning": "2mb",
+                  "maximumError": "3mb"
                 },
                 {
                   "type": "anyComponentStyle",

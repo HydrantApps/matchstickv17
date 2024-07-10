@@ -7,6 +7,9 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
+    "build:stats": "ng build --stats-json",
+    "analyze": "webpack-bundle-analyzer dist/matchstick/stats.json",
+    "analyze-es": "esbuild-visualizer --open=true --metadata dist/matchstick/stats.json",
     "prepare": "husky"
   },
   "type": "module",
@@ -52,6 +55,7 @@
     "@angular/compiler-cli": "^17.3.0",
     "@types/aos": "^3.0.7",
     "@types/jasmine": "~5.1.0",
+    "esbuild-visualizer": "^0.6.0",
     "husky": "^9.0.11",
     "jasmine-core": "~5.1.0",
     "karma": "~6.4.0",
