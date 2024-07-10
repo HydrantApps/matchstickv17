@@ -1,6 +1,17 @@
-[logo](https://github.com/HydrantApps/matchstickv17/assets/3653774/41b19fda-28ab-4c9b-a500-ba7137240610)
+<img src="https://github.com/HydrantApps/matchstickv17/assets/3653774/41b19fda-28ab-4c9b-a500-ba7137240610" alt="logo" />
 
 ## Matchstick is an Angular PWA with a firebase backend that you can use to fire up your app as quick as possible
+
+![CircleCI (branch)](https://img.shields.io/circleci/build/github/HydrantApps/matchstickv17/main) ![GitHub commit activity](https://img.shields.io/github/commit-activity/w/HydrantApps/matchstickv17) ![GitHub repo size](https://img.shields.io/github/repo-size/HydrantApps/matchstickv17) ![GitHub Downloads (all assets, latest release)](https://img.shields.io/github/downloads/HydrantApps/matchstickv17/latest/total)
+
+
+A demo can be seen here
+[Demo Site](https://matchstick-46c7a.web.app/)
+
+Test Credentials <br />
+username: demouser@matchstick.com <br />
+password: DemoUser1234! <br />
+
 
 This version serves as an updated version of a series of different boilerplate repos i have made in the past (in no particular order).
 * [Angular Start](https://github.com/josephnwachukwu/AngularStart)
@@ -39,7 +50,7 @@ Once node is installed you can use to get the latest version of the angular cli.
   $ npm i -g @angular/cli
 ```
 
-### Firebase Functions
+### Firebase tools
 You will need the firebase cli installed globally on your system to push firebase function changes and init the project. <br />
 
 ```bash
@@ -57,12 +68,13 @@ This package can be installed from npm package manager just run the following co
 ```bash
   $ npx create-matchstick-app repoName
 ```
+or of you like you can just clone this repo into your workspace
 
-Go to [The Firebase Console](https://console.firebase.google.com)
+Next, Go to [The Firebase Console](https://console.firebase.google.com)
 
 Create a new Firebase project and add Firestore, authentication, storage and hosting. 
 
-Next to go to add new project and select web 
+Next, go to 'add new project' and select web 
 This will provide you with a firebase config object. 
 
 Copy this object and add this to your environment.ts file. (Make sure your environment.ts file is in the .git ignore file so that it isn’t checked in) 
@@ -80,9 +92,9 @@ const firebaseConfig = {
 };
 ```
 
-Next install firebase tools globally on your system so that you can use the firebase cli
+Next, install firebase tools globally on your system so that you can use the firebase cli
 
-Next run the firebase init to connect your repo to the newly created project. 
+Next, run the firebase init to connect your repo to the newly created project. 
 This will create a firebase.json fire in the root of your project that contains some configurations for your firebase set up. 
 
 ## Commands
@@ -90,15 +102,12 @@ This will create a firebase.json fire in the root of your project that contains 
 |`npm run <script>`|Description|
 |------------------|-----------|
 |`start`|Serves your app at `localhost:8080`. "webpack-dev-server --config \"config/webpack.serve.dev\" --progress --inline".|
-|`test`|Runs unit tests with Karma and generates a coverage report. "mocha --require ignore-styles --reporter mocha-multi-reporters --reporter-options configFile=config/mocha-multi-reporters.json tests/ignore-utils.js tests/helpers/setup.js tests/**/*tests.js src/**/*tests.js"|
-|`dev`|Same as `npm start`, but enables nodemon for the server as well.|
-|`serve-dist`|Serves the production verstion fo the app "webpack-dev-server --config \"config/webpack.serve.prod\""|
-|`prestart`|Removes Unecessary packages and runs tests "npm run lint && npm run test"|
-|`clean`|remove the dist folder "rimraf dist"|
-|`build`|Builds the Production version of the app "webpack --config \"config/webpack.build.prod\" --optimize-minimize --progress -p"|
-|`lint:js`|Lint all `.js` files. "eslint \"./src\"", [Read more on this](http://eslint.org/docs/user-guide/command-line-interface.html#fix). |
-|`lint`|Lint all `.js` and `.css` files. "npm run lint:js && npm run lint:css" |
-|`lint:css`|Lint and fix all `.css` files. "stylelint \"./src/**/*.css\"", |
+|`test`|Runs unit tests|
+|`prepare`|Runs husky pre-commit hook|
+|`build`|Builds the app |
+|`build:stats`| Buids stats.json file in the dist folder|
+|`analyze`|Runs and opens webpacl-bundle-analyzer|
+
 
 ## Application Structure
 
