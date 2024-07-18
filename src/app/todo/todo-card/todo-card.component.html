@@ -1,0 +1,28 @@
+<div
+  class="card margin-bottom"
+  [ngClass]="{ isEditing: isEdit, completed: todo.isCompleted }"
+>
+  <div class="card-content" (dblclick)="setEditMode()">
+    <input
+      type="checkbox"
+      (change)="toggleCompleted()"
+      [checked]="todo.isCompleted"
+    />
+    {{ todo.text }}
+    <button class="delete" (click)="removeTodo()"></button>
+  </div>
+  @if (isEdit) {
+    <ng-container>
+      <div class="field">
+        <div class="control">
+          <input
+            class="input"
+            [value]="editText"
+            (keyup)="updateText($event)"
+            (keyup.enter)="updateTodo()"
+          />
+        </div>
+      </div>
+    </ng-container>
+  }
+</div>

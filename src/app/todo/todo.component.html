@@ -1,1 +1,68 @@
-<p>todo works!</p>
+<section class="section is-top-to-bottom">
+  <div class="container">
+    <div class="columns">
+      <div class="column is-6 is-offset-3">
+        <div class="box">
+          <h1 class="title is-2">Todos</h1>
+          <div class="field">
+            <label class="label">Name</label>
+            <div class="control">
+              <input
+                class="input"
+                type="text"
+                placeholder="Text input"
+                autofocus
+                [value]="text"
+                (keyup)="changeText($event)"
+                (keyup.enter)="addTodo()"
+              />
+            </div>
+          </div>
+          @for (todo of visibleTodos(); track $index) {
+            <app-todo-card
+              [todo]="todo"
+              [isEdit]="editingId === todo.id"
+              (setEdit)="setEdit($event)"
+            ></app-todo-card>
+          }
+          @if (!noTodos()) {
+            <div class="card">
+              <div class="card-content">
+                {{ activeCount() }} {{ itemsLeft() }}
+                <button
+                  class="button is-outlined is-dark"
+                  [ngClass]="{
+                    'is-success': todoService.filterSignal() === filterEnum.all,
+                  }"
+                  (click)="updateFilter(filterEnum.all)"
+                >
+                  All
+                </button>
+                <button
+                  class="button is-outlined is-dark"
+                  [ngClass]="{
+                    'is-success':
+                      todoService.filterSignal() === filterEnum.active,
+                  }"
+                  (click)="updateFilter(filterEnum.active)"
+                >
+                  Active
+                </button>
+                <button
+                  class="button is-outlined is-dark"
+                  [ngClass]="{
+                    'is-success':
+                      todoService.filterSignal() === filterEnum.completed,
+                  }"
+                  (click)="updateFilter(filterEnum.completed)"
+                >
+                  Completed
+                </button>
+              </div>
+            </div>
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

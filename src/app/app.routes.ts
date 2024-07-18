@@ -57,4 +57,16 @@ export const routes: Routes = [
       ),
     ...canActivate(redirectUnauthorizeToLogin),
   },
+  {
+    path: 'todo',
+    loadComponent: () =>
+      import('./todo/todo.component').then((m) => m.TodoComponent),
+    ...canActivate(redirectUnauthorizeToLogin),
+  },
+  {
+    path: 'admin',
+    loadComponent: () =>
+      import('./auth/admin/admin.component').then((m) => m.AdminComponent),
+    ...canActivate(redirectUnauthorizeToLogin),
+  },
 ];

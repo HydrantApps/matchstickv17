@@ -1,17 +1,17 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AdminComponent } from './admin.component';
+import { TodoCardComponent } from './todo-card.component';
 
-describe('AdminComponent', () => {
-  let component: AdminComponent;
-  let fixture: ComponentFixture<AdminComponent>;
+describe('TodoCardComponent', () => {
+  let component: TodoCardComponent;
+  let fixture: ComponentFixture<TodoCardComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [AdminComponent],
+      imports: [TodoCardComponent],
     }).compileComponents();
 
-    fixture = TestBed.createComponent(AdminComponent);
+    fixture = TestBed.createComponent(TodoCardComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
