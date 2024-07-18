@@ -3,13 +3,21 @@
   [ngClass]="{ isEditing: isEdit, completed: todo.isCompleted }"
 >
   <div class="card-content" (dblclick)="setEditMode()">
-    <input
-      type="checkbox"
-      (change)="toggleCompleted()"
-      [checked]="todo.isCompleted"
-    />
-    {{ todo.text }}
-    <button class="delete" (click)="removeTodo()"></button>
+    <div class="b-checkbox is-primary is-circular">
+      <div class="field">
+        <div class="control">
+          <input
+            id="checkbox"
+            class="is-checkradio is-success"
+            type="checkbox"
+            (change)="toggleCompleted()"
+            [checked]="todo.isCompleted"
+          />
+          <label for="checkbox" class="todo-label">{{ todo.text }}</label>
+          <button class="delete is-danger" (click)="removeTodo()"></button>
+        </div>
+      </div>
+    </div>
   </div>
   @if (isEdit) {
     <ng-container>

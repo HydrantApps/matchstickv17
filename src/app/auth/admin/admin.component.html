@@ -1,5 +1,48 @@
-@if (users$) {
-  <!-- @for(user of users$; track $index) {
-
-    } -->
-}
+@if (users$) {}
+<section class="section is-top-to-bottom">
+  <div class="container">
+    <div class="column is-6 is-offset-3">
+      <div class="box">
+        <h2 class="title is-2 has-text-centered">Users</h2>
+        @for (user of users$ | async; track $index) {
+          <div class="card">
+            <header class="card-header">
+              <p class="card-header-title">
+                {{ user.displayName }} ({{ user.email }})
+              </p>
+              <button class="card-header-icon" aria-label="more options">
+                <span class="icon">
+                  <i class="fas fa-angle-down" aria-hidden="true"></i>
+                </span>
+              </button>
+            </header>
+            <div class="card-content">
+              <div class="content">
+                <div class="field">
+                  <label class="label">Tier ({{ user.tier }})</label>
+                  <div class="control">
+                    <div class="select">
+                      <select
+                        [(ngModel)]="user.tier"
+                        (change)="adminUpdateUser(user)"
+                      >
+                        <option>Select dropdown</option>
+                        <option [value]="'basic'">Basic</option>
+                        <option [value]="'premium'">Premuim</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <footer class="card-footer">
+              <!-- <a href="#" class="card-footer-item">Save</a>
+              <a href="#" class="card-footer-item">Edit</a> -->
+              <a class="card-footer-item" (click)="deleteUser(user)">Delete</a>
+            </footer>
+          </div>
+        }
+      </div>
+    </div>
+  </div>
+</section>
